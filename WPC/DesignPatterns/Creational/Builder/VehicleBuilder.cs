@@ -13,29 +13,34 @@ namespace WPC.DesignPatterns.Creational.Builder
         {
             Vehicle = new Vehicle();
         }
-        public void SetWeels(int wheels)
+        public VehicleBuilder SetWeels(int wheels)
         {
             Vehicle.Wheels = wheels;
+            return this;
         }
 
-        public void SetDoors(int doors)
+        public VehicleBuilder SetDoors(int doors)
         {
             Vehicle.Doors = doors;
+            return this;
         }
 
-        public void SetEngine(int? power)
+        public VehicleBuilder SetEngine(int? power)
         {
             Vehicle.EnginePower = power;
+            return this;
         }
 
-        public void SetTrunk(int? capacity)
+        public VehicleBuilder SetTrunk(int? capacity)
         {
             Vehicle.TrunkCapacity = capacity;
+            return this;
         }
 
-        public void SetSeets(int seats)
+        public VehicleBuilder SetSeets(int seats)
         {
             Vehicle.Seats = seats;
+            return this;
         }
 
         public Vehicle Build()
