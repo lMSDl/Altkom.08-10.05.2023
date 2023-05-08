@@ -19,13 +19,13 @@ namespace WPC.DesignPrinciples
 
         public bool Charge(int accountId, float amount)
         {
-            var account = Accounts.SingleOrDefault(x => x.Id == accountId);
+            var account = FindAccountById(accountId);
             if (account == null)
             {
                 return false;
             }
 
-            if (account.Income - account.Outcome + account.AllowedDebit < amount)
+            if (GetBalance(accountId) + account.AllowedDebit < amount)
             {
                 return false;
             }
@@ -34,9 +34,14 @@ namespace WPC.DesignPrinciples
             return true;
         }
 
+        private PaymentAccount? FindAccountById(int accountId)
+        {
+            return Accounts.Where(x => x.IsActive).SingleOrDefault(x => x.Id == accountId);
+        }
+
         public void Fund(int accountId, float amount)
         {
-            var account = Accounts.Where(x => x.Id == accountId).SingleOrDefault();
+            var account = FindAccountById(accountId);
             if (account == null)
             {
                 return;
@@ -47,7 +52,7 @@ namespace WPC.DesignPrinciples
 
         public float? GetBalance(int accountId)
         {
-            var customer = Accounts.Where(x => x.Id == accountId).SingleOrDefault();
+            var customer = FindAccountById(accountId);
             return customer?.Income - customer?.Outcome;
         }
     }
