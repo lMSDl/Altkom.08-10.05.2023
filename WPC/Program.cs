@@ -1,5 +1,12 @@
 ﻿
 
+WPC.DesignPatterns.Creational.Builder.Client.Execute();
+
+
+
+
+/*
+
 using WPC.SOLID.L;
 
 var rectangle = new Square();
@@ -22,4 +29,4 @@ void SetupRectangle(Rectangle rectangle, int a, int b)
 {
     rectangle.A = a;
     rectangle.B = b;
-}
+}*/
