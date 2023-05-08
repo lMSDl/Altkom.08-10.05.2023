@@ -1,6 +1,6 @@
 ﻿
 
-using WPC.DesignPatterns.Creational.FactoryMethod;
+using WPC.DesignPatterns.Creational.AbstractFactory;
 
 Client.Execute();
 
