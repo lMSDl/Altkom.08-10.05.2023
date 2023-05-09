@@ -1,6 +1,6 @@
 ﻿
 
-using WPC.DesignPatterns.Creational.Singleton;
+using WPC.DesignPatterns.Creational.ObjectPool;
 
 Client.Execute();
 
