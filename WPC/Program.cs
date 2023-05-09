@@ -1,6 +1,4 @@
-﻿
-
-using WPC.DesignPatterns.Creational.ObjectPool;
+﻿using WPC.DesignPatterns.Structural.Adapter.I;
 
 Client.Execute();
 
