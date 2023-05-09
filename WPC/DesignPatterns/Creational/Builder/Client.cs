@@ -30,13 +30,19 @@ namespace WPC.DesignPatterns.Creational.Builder
             Console.WriteLine(vehicle);
 
 
-            vehicle = new VehicleBuilder()
-                                        .SetWeels(4)
-                                        .SetSeets(5)
-                                        .SetDoors(4)
-                                        .SetEngine(100)
-                                        .SetTrunk(500)
-                                        .Build();
+            vehicle = new VehicleBuilderFacade()
+                                        .Parts
+                                            .SetWeels(4)
+                                            .SetSeets(5)
+                                            .SetDoors(4)
+                                        .Metadata
+                                            .SetManufacturer("Altkom")
+                                            .SetModel("AJX2")
+                                            .SetProductionDate(DateTime.Now)
+                                        .Parts
+                                            .SetEngine(100)
+                                            .SetTrunk(500)
+                                            .Build();
 
             Console.WriteLine(vehicle);
 

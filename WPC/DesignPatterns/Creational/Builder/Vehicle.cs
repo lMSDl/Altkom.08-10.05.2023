@@ -46,6 +46,10 @@ namespace WPC.DesignPatterns.Creational.Builder
         public int? TrunkCapacity { get; set; }
         public int? EnginePower { get; set; }
 
+        public string Manufacturer { get; set; }
+        public string Model { get; set; }
+        public DateTime ProductionDate { get; set; }
+
         public object Clone()
         {
             return MemberwiseClone();
