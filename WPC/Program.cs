@@ -1,10 +1,8 @@
 ﻿
 
-using WPC.DesignPatterns.Creational.Builder;
+using WPC.DesignPatterns.Creational.Singleton;
 
 Client.Execute();
-
-
 
 
 /*
