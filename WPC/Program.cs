@@ -1,4 +1,4 @@
-﻿using WPC.DesignPatterns.Behavioral.NullObject;
+﻿using WPC.DesignPatterns.Behavioral.Command;
 
 Client.Execute();
 
