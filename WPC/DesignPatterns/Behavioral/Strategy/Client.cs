@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WPC.DesignPatterns.Behavioral.Strategy.Interpreter;
 
 namespace WPC.DesignPatterns.Behavioral.Strategy
 {
@@ -24,11 +25,19 @@ namespace WPC.DesignPatterns.Behavioral.Strategy
                 if (float.TryParse(split[0], out var a) && float.TryParse(split[2], out var b))
                 {
                     Console.WriteLine(calculator.Operate(a, b));
-                    Console.WriteLine(GetFunc(split[1])(a, b));
                 }
+
+
+                var mathObject = line.Interpret();
+                Console.WriteLine(  mathObject.Func(mathObject.A, mathObject.B) );
             }
 
+
+
+
         }
+
+
 
         private static ICalcStrategy? GetStrategy(string v)
         {
@@ -42,23 +51,6 @@ namespace WPC.DesignPatterns.Behavioral.Strategy
                     return new MultiplyStrategy();
                 case "/":
                     return new DivideStrategy();
-                default:
-                    return null;
-            }
-        }
-
-        private static Func<float, float, float> GetFunc(string v)
-        {
-            switch (v)
-            {
-                case "+":
-                    return (a, b) => a + b;
-                case "-":
-                    return (a, b) => a - b;
-                case "*":
-                    return (a, b) => a * b;
-                case "/":
-                    return (a, b) => a / b;
                 default:
                     return null;
             }
