@@ -56,7 +56,7 @@ namespace WPC.DesignPatterns.Behavioral.Strategy
                 case "-":
                     return (a, b) => a - b;
                 case "*":
-                    return (a, b) => a + b;
+                    return (a, b) => a * b;
                 case "/":
                     return (a, b) => a / b;
                 default:
